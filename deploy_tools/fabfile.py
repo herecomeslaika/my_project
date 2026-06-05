@@ -81,6 +81,10 @@ def _collectstatic():
     """Collect static files."""
     with cd(f'{SOURCE_DIR}/mywebsite'):
         run(f'{VENV_DIR}/bin/python manage.py collectstatic --noinput')
+    # Ensure Nginx (www-data) can traverse path and read static files
+    sudo('chmod o+x /home/yyy /home/yyy/sites')
+    sudo(f'chmod o+x {BASE_DIR}')
+    sudo(f'chmod -R o+rX {BASE_DIR}/static')
 
 
 def _migrate():
