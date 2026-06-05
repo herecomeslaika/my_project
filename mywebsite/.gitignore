@@ -1,0 +1,21 @@
+# Python 运行产生的缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 虚拟环境（如果以后您把虚拟环境建在项目里，防止把它传上去）
+myenv/
+venv/
+env/
+
+# Django 的本地测试数据库（通常不建议加入版本控制）
+db.sqlite3
+
+# 存放密码或密钥的环境变量文件
+.env
+
+# VS Code 编辑器的本地配置
+.vscode/
+
+# 针对 macOS 用户的系统隐藏文件（虽然您在 Windows，但加上更严谨）
+.DS_Store
