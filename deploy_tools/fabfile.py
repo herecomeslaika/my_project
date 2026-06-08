@@ -67,7 +67,7 @@ def _update_settings():
     if not exists(secret_key_file):
         secret_key = _generate_secret_key()
         run(f"echo '{secret_key}' > {secret_key_file}")
-    run(f"sed -i \"s/SECRET_KEY = .*/SECRET_KEY = open('{secret_key_file}').read().strip()/\" {settings_path}")
+    run(f"sed -i \"s|SECRET_KEY = .*|SECRET_KEY = open('{secret_key_file}').read().strip()|\" {settings_path}")
 
 
 def _update_virtualenv():
